@@ -7,51 +7,26 @@
                                 </div>
                                 <div class="card-content">
                                     <ul class="ulist">
+                                        <% @new_users.each do |userTF|%>
+                                        <% if current_user.id != userTF.id%>
                                         <li>
 
-                                            <figure class="image ">
-                                                <a href="#"></a>
-                                                <img src="https://placehold.it/50x50/000/fff" class="is-rounded" alt="">
+                                            <figure class="image is-64x64">
+                                                <a href="#">
+                                                    <%= image_tag("#{userTF.photo}", :alt => userTF.full_name,:class=> "is-rounded" ) %>
                                                 </a>
                                             </figure>
                                             <div class="info">
                                                 <h4 class="uname">
-                                                    <a href="#">Jonathan Moreira</a></h4>
+                                                    <a href="#"><%= userTF.full_name %></a></h4>
                                                 <div class="details">Followed by<a href="#"> Kerem Suer</a></div>
                                             </div>
 
 
                                         </li>
-                                        <li>
-
-                                            <div class="image">
-                                                <a href="#"></a>
-                                                    <img src="https://placehold.it/50x50/000/fff" class="is-rounded" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <h4 class="uname">
-                                                    <a href="#">Jonathan Moreira</a></h4>
-                                                <div class="details">Followed by<a href="#"> Kerem Suer</a></div>
-                                            </div>
-
-
-                                        </li>
-                                        <li>
-
-                                            <div class="image">
-                                                <a href="#"></a>
-                                                    <img src="https://placehold.it/50x50/000/fff" class="is-rounded" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <h4 class="uname">
-                                                    <a href="#">Jonathan Moreira</a></h4>
-                                                <div class="details">Followed by<a href="#"> Kerem Suer</a></div>
-                                            </div>
-
-
-                                        </li>
+                                        <% end %>
+                                        <% end %>
+                                       
                                     </ul>
                                 </div>
                                 <div class="card-footer">

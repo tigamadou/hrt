@@ -35,23 +35,40 @@
                 <div class="card-content ">
                     <ul class="tweet_list">
                         <% @posts.each do |post| %>
+                        
                         <li class="tweet">
-                            <div class="image">
-                                <img src="https://placehold.it/200x200/000/fff" alt="">
-                            </div>
-                            <div class="details ">
-                                <h3 class="title">
-                                    <span>
-                                      Myley Ray Cyrus
-                                    </span>
-                                    <span class="date"title="<%= post.created_at%>">
-                                        
-                                            <%= time_ago_in_words(post.created_at)%>
-                                      
-                                    </span>
-                                    <div class="dropdown is-pulled-right is-small is-rounded is-hoverable">
+                            <article class="media">
+                              <figure class="media-left">
+                                <p class="image is-64x64">
+                                  <img src="https://bulma.io/images/placeholders/128x128.png">
+                                </p>
+                              </figure>
+                              <div class="media-content">
+                                <div class="content">
+                                  <p>
+                                    <strong></strong> <small>@johnsmith</small> <small><%= time_ago_in_words(post.created_at)%></small>
+                                    <br>
+                                     <%= post.text %>
+                                  </p>
+                                </div>
+                                <nav class="level is-mobile">
+                                  <div class="level-left">
+                                    <a class="level-item">
+                                      <span class="icon "><i class="fa fa-comment"></i></span>
+                                      <span>0</span>
+                                    </a>
+                                    
+                                    <a class="level-item">
+                                      <span class="icon "><i class="fa fa-heart"></i></span>
+                                      <span>0</span>
+                                    </a>
+                                  </div>
+                                </nav>
+                              </div>
+                              <div class="media-right">
+                                <div class="dropdown is-pulled-right is-small is-rounded is-hoverable">
                                       <div class="dropdown-trigger">
-                                        <button class="button is-small is-rounded" aria-haspopup="true" aria-controls="dropdown-menu6">
+                                        <button class="button is-small is-white" aria-haspopup="true" aria-controls="dropdown-menu6">
                                           
                                           <span class="icon is-small">
                                             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -73,23 +90,8 @@
                                         </div>
                                       </div>
                                     </div>
-                                </h3>
-                                <p class="content ">
-                                    <%= post.text %>
-                                </p>
-                                <p class="actions">
-                                  <a href="" class="button is-rounded is-small is-white">
-                                    <span class="icon"><i class="fa fa-comment"></i></span>
-                                    <span>0</span>
-                                  </a>
-                                  <a href="" class="button is-rounded is-small is-white">
-                                    <span class="icon"><i class="fa fa-heart"></i></span>
-                                    <span>0</span>
-                                  </a>
-                                </p>
-                                
-                            </div>
-                            
+                              </div>
+                            </article>
                         </li>
                         <% end %>
                   
