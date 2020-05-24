@@ -35,12 +35,15 @@
                 </li>               
                 
                 <li>
-                    <a href="<%= users_path%>">
+                    <a href=" users_path">
                         <span class="icon">
                             <i class="fas fa-user"></i>
                         </span>
                         <span>Profile</span>
                     </a>
+                </li>
+                <li>
+                    <a href="<%= destroy_user_session_path %>"  data-method="delete" rel="nofollow" >Sign Out</a>
                 </li>
               
             
