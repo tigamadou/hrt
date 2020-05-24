@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  layout 'account', only: [:index,:show,:edit]
   # GET /users
   # GET /users.json
   def index

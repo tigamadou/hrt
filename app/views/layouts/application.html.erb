@@ -10,20 +10,7 @@
   </head>
 
   <body>
-    <% if flash[:notice]%>
-      <div class="notification is-primary">
-          <p>
-            <%= notice %>
-          </p>
-      </div>
-    <% end %>
-    <% if flash[:alert]%>
-      <div class="notification is-danger">
-          <p>
-            <%= alert %>
-          </p>
-      </div>
-    <% end %>
+    <%= render 'shared/flash' %>
     <%= yield %>
   </body>
 </html>
