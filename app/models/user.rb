@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :followings, through: :given_follows, source: :followed
 
   def follow(user)
-    byebug
+    
     Following.create(followed_id: user.id, follower_id: id )
   end
 

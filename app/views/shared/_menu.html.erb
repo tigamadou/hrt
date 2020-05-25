@@ -12,13 +12,13 @@
                 <div class="stats">
                     <div class="following">
                         <div>
-                            <p class="nb">184</p>
+                            <p class="nb"><%= current_user.followings.count %></p>
                             <p class="text">Following</p>
                         </div>
                     </div>
                     <div class="following">
                         <div>
-                            <p class="nb">823</p>
+                            <p class="nb"><%= current_user.followers.count %></p>
                             <p class="text">Followers</p>
                         </div>
                     </div>
