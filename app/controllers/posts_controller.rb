@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @posts = Post.all.ordered_by_most_recent
     @new_users = User.all
   end
 

@@ -28,16 +28,16 @@
                 <li class="is-active">
                     <a href="<%= posts_path%>">
                         <span class="icon">
-                            <i class="fas fa-home"></i>
+                            <i class="fa fa-home"></i>
                         </span>
                         <span>HOME</span>
                     </a>
                 </li>               
                 
                 <li>
-                    <a href=" users_path">
+                    <a href="<%= show_user_path(current_user.username)%>">
                         <span class="icon">
-                            <i class="fas fa-user"></i>
+                            <i class="fa fa-user"></i>
                         </span>
                         <span>Profile</span>
                     </a>

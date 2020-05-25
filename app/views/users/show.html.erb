@@ -1,24 +1,139 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid page">
+  <figure class="image is-3by1">
+    <img src="https://placehold.it/720x240" />
+  </figure>
+                    <div class="tabs is-medium">
+                        <ul>
+                            <li class="is-active"><a>TWEETS</a></li>
+                        </ul>
+                    </div>
+                    <div class="container">
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+                        <div class="feeds">
 
-<p>
-  <strong>Full name:</strong>
-  <%= @user.full_name %>
-</p>
 
-<p>
-  <strong>Photo:</strong>
-  <%= @user.photo %>
-</p>
+                            <%= render 'shared/posts'%>
+                        </div>
 
-<p>
-  <strong>Cover image:</strong>
-  <%= @user.cover_image %>
-</p>
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="profile">
+                                <div class="actions">
+                                    <div class="more">
+                                        <a href="#">
+                                            <span class=""><i class="fa fa-plus"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="image">
+                                        <img src="https://placehold.it/120x120/fff/000" alt="" class="is-rounded">
+                                    </div>
+                                    <div class="more">
+                                        <a href="#">
+                                            <span class=""><i class="fa fa-list-ul"></i></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h4 class="name"><%= @user.full_name%></h4>
+                                    <div class="link">@<%= @user.username%></div>
+                                </div>
+                                <div class="stats">
+                                    <div>
+                                        <div class="nbr"><%= @user.posts.count%></div>
+                                        <div class="text">Tweets</div>
+                                    </div>
+                                    <div>
+                                        <div class="nbr">0</div>
+                                        <div class="text">Following</div>
+                                    </div>
+                                    <div>
+                                        <div class="nbr">0</div>
+                                        <div class="text">Followers</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card ">
+                        <div class="card-title">
+                            <div class="card-header-title">
+                                <span>Followed By</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <ul class="ulist">
+                                <li>
+                                    <div class="gr-1 d-flex">
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+                                        <figure class="image small">
+                                            <a href="#"></a>
+                                            <img src="https://placehold.it/50x50/000/fff" class="is-rounded" alt="">
+                                            </a>
+                                        </figure>
+                                        <div class="info">
+                                            <h4 class="uname">
+                                                <a href="#">Jonathan Moreira</a>
+                                            </h4>
+                                            <div class="ulink"><a href="#">@JonathanMereira</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="more">
+                                        <a href="#">
+                                            <span class="icon is-rounded"><i class="fa fa-plus"></i></span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gr-1 d-flex">
+
+                                        <figure class="image small">
+                                            <a href="#"></a>
+                                            <img src="https://placehold.it/50x50/fff/00" class="is-rounded" alt="">
+                                            </a>
+                                        </figure>
+                                        <div class="info">
+                                            <h4 class="uname">
+                                                <a href="#">Jonathan Moreira</a>
+                                            </h4>
+                                            <div class="ulink"><a href="#">@JonathanMereira</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="more">
+                                        <a href="#">
+                                            <span class="icon is-rounded"><i class="fa fa-plus"></i></span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gr-1 d-flex">
+
+                                        <figure class="image small">
+                                            <a href="#"></a>
+                                            <img src="https://placehold.it/50x50/000/fff" class="is-rounded" alt="">
+                                            </a>
+                                        </figure>
+                                        <div class="info">
+                                            <h4 class="uname">
+                                                <a href="#">Jonathan Moreira</a>
+                                            </h4>
+                                            <div class="ulink"><a href="#">@JonathanMereira</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="more">
+                                        <a href="#">
+                                            <span class="icon is-rounded"><i class="fa fa-plus"></i></span>
+                                        </a>
+                                    </div>
+                                </li>
+                                
+
+                            </ul>
+                        </div>
+                       
+                    </div>
+
+
+                </div>

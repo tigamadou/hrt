@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  root 'posts#index'
-  resources :posts
-  devise_for :users
-  get 'users', to: 'user#index' , as: 'user_index' 
-  get 'users/:username', to: 'user#show' , as: 'user_show' 
   
-  resources :posts, only: %i[index create] do
+  resources :posts  do
     resources :comments, only: [:create]
     resources :likes, only: %i[create destroy]
   end
+  devise_for :users
+  get 'users', to: 'users#index' , as: 'users' 
+  get 'users/:username', to: 'users#show' , as: 'show_user'
+  get 'users/:username/edition', to: 'users#edit' , as: 'edit_user'
   
+  
+  root 'posts#index'
+
 end
