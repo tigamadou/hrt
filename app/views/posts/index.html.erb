@@ -2,8 +2,7 @@
 <div class="container-fluid page">
     <div class="tabs is-medium">
         <ul>
-            <li class="is-active"><a>TWEETS</a></li>
-            
+            <li class="is-active"><a>TWEETS</a></li>            
         </ul>
     </div>
     <div class="container">
@@ -20,8 +19,7 @@
                             <%= f.text_field :text, class: 'input' %>
                           </div>
                         </div>
-                    <% end %>
-                    
+                    <% end %>                    
                 </div>
 
             </div>
@@ -46,7 +44,7 @@
                               <div class="media-content">
                                 <div class="content">
                                   <p>
-                                    <strong></strong> <small>@johnsmith</small> <small><%= time_ago_in_words(post.created_at)%></small>
+                                    <strong><%= post.author.full_name%></strong> <small><%= post.author.username%></small> <small><%= time_ago_in_words(post.created_at)%></small>
                                     <br>
                                      <%= post.text %>
                                   </p>
@@ -101,7 +99,7 @@
         </div>
 
     </div>
-<p id="notice"><%= notice %></p>
+
                         
 </div>
 <div class="sidebar">
