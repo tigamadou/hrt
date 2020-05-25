@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'users', to: 'users#index' , as: 'users' 
   get 'users/:username', to: 'users#show' , as: 'show_user'
   get 'users/:username/edition', to: 'users#edit' , as: 'edit_user'
-  
+  post 'following/create', to: 'following#create', as: 'create_following'
   
   root 'posts#index'
 

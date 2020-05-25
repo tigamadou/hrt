@@ -22,11 +22,21 @@
                         <div class="card-content">
                             <div class="profile">
                                 <div class="actions">
-                                    <div class="more">
-                                        <a href="#">
-                                            <span class=""><i class="fa fa-plus"></i></span>
-                                        </a>
-                                    </div>
+                                  <% if current_user.following?(@user).nil?%>
+                                    <%= form_for(@user, url: create_following_path(@user), method: :post) do |f| %>
+                                      <%= f.hidden_field :user_id, value: @user.id %>
+
+                                      <button class="more">
+                                              <span class=""><i class="fa fa-plus"></i></span>
+                                        
+                                      </button>
+                                    <% end %>
+                                  <% else %>
+                                    <button class="more">
+                                              <span class=""><i class="fa fa-check"></i></span>
+                                        
+                                      </button>
+                                  <% end %>
                                     <div class="image">
                                         <img src="https://placehold.it/120x120/fff/000" alt="" class="is-rounded">
                                     </div>
@@ -46,11 +56,11 @@
                                         <div class="text">Tweets</div>
                                     </div>
                                     <div>
-                                        <div class="nbr">0</div>
+                                        <div class="nbr"><%= @user.followings.count %></div>
                                         <div class="text">Following</div>
                                     </div>
                                     <div>
-                                        <div class="nbr">0</div>
+                                        <div class="nbr"><%= @user.followers.count %></div>
                                         <div class="text">Followers</div>
                                     </div>
                                 </div>
@@ -64,7 +74,9 @@
                             </div>
                         </div>
                         <div class="card-content">
+                            <% if @user.followers.count >0%>
                             <ul class="ulist">
+                              <% @user.followers.limit(10).each do |follower|%>
                                 <li>
                                     <div class="gr-1 d-flex">
 
@@ -75,9 +87,9 @@
                                         </figure>
                                         <div class="info">
                                             <h4 class="uname">
-                                                <a href="#">Jonathan Moreira</a>
+                                                <a href="<%= show_user_path(follower.username)%>"><%= follower.full_name%></a>
                                             </h4>
-                                            <div class="ulink"><a href="#">@JonathanMereira</a></div>
+                                            <div class="ulink"><a href="#">@<%= follower.username%></a></div>
                                         </div>
                                     </div>
                                     <div class="more">
@@ -86,51 +98,14 @@
                                         </a>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="gr-1 d-flex">
-
-                                        <figure class="image small">
-                                            <a href="#"></a>
-                                            <img src="https://placehold.it/50x50/fff/00" class="is-rounded" alt="">
-                                            </a>
-                                        </figure>
-                                        <div class="info">
-                                            <h4 class="uname">
-                                                <a href="#">Jonathan Moreira</a>
-                                            </h4>
-                                            <div class="ulink"><a href="#">@JonathanMereira</a></div>
-                                        </div>
-                                    </div>
-                                    <div class="more">
-                                        <a href="#">
-                                            <span class="icon is-rounded"><i class="fa fa-plus"></i></span>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="gr-1 d-flex">
-
-                                        <figure class="image small">
-                                            <a href="#"></a>
-                                            <img src="https://placehold.it/50x50/000/fff" class="is-rounded" alt="">
-                                            </a>
-                                        </figure>
-                                        <div class="info">
-                                            <h4 class="uname">
-                                                <a href="#">Jonathan Moreira</a>
-                                            </h4>
-                                            <div class="ulink"><a href="#">@JonathanMereira</a></div>
-                                        </div>
-                                    </div>
-                                    <div class="more">
-                                        <a href="#">
-                                            <span class="icon is-rounded"><i class="fa fa-plus"></i></span>
-                                        </a>
-                                    </div>
-                                </li>
+                              <% end%>
+                               
                                 
 
                             </ul>
+                            <% else %>
+                              No followers for now.
+                            <% end %>
                         </div>
                        
                     </div>
