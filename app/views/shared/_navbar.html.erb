@@ -18,8 +18,11 @@
 
                             <div class="navbar-end">
                           
-                                <a href="<%= edit_user_registration_path(current_user)%>" class=" navbar-item has-text-black">
+                                <a href="<%= edit_user_registration_path(current_user)%>" class=" navbar-item ">
                                     <span class="icon"><i class="fa fa-cog"></i></span>
+                                </a>
+                                <a href="<%= destroy_user_session_path %>"  data-method="delete" rel="nofollow"  class=" navbar-item ">
+                                    <span class="icon"><i class="fa fa-sign-out"></i></span> <span>Sing Out</span>
                                 </a>
 
                             </div>

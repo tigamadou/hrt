@@ -7,24 +7,24 @@
       <div class="columns">
         
         <div class="column">
-           <% if resource.photo.attached?%>
-                <div class="image" style="width: 80px">
-
-                  <%= image_tag url_for(resource.photo),class:"is-rounded" %>
+            <div class="columns">
+              <div class="column is-narrow">
+                <div class="image is-rounded is-128x128">
+                  <%= user_photo(resource) %>
                 </div>
-              <% else%>
-                <%= image_tag gravatar_image_url(current_user.email,size: 40),height: 20, width: 20, class: "is-rounded"%>
-              <% end %>
-              <%= f.input :photo, required: true, autofocus: true,input_html: { type: "file",class: "input" },label_html: {class: "label"},wrapper:false %>
+
+              </div>
+              <div class="column">
+             
+
+                  <%= f.input :photo, required: true, autofocus: true,input_html: { type: "file",class: "input" },label_html: {class: "label"},wrapper:false %>
+              </div>
+            </div>
               <br>
           <div class="card">
             <div class="card-image">
               <div class="image is-3by1">
-              <% if resource.cover_image.attached?%>
-                <%= image_tag url_for(resource.cover_image) %>
-                <%else%>
-                <img src="https://placehold.it/720x240"" alt="">
-                <% end %>
+                <%= user_cover(resource) %>
               </div>  
             </div>
             
@@ -47,11 +47,6 @@
                   <%= f.input :email, required: true, autofocus: true,input_html: { class: "input",readonly: true },label_html: {class: "label"},wrapper:false %>
                 </div>
               </div>
-
-              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-              <% end %>
-
               <div class="field">
                 <div class="control">
                   <%= f.input :password,

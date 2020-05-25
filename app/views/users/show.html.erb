@@ -1,75 +1,71 @@
 <div class="container-fluid page">
-     <div class="image is-3by1">
-      <% if @user.cover_image.attached?%>
-        <%= image_tag url_for(@user.cover_image) %>
-        <%else%>
-        <img src="https://placehold.it/720x240"" alt="">
-        <% end %>
-      </div> 
-                    <div class="tabs is-medium">
-                        <ul>
-                            <li class="is-active"><a>TWEETS</a></li>
-                        </ul>
-                    </div>
-                    <div class="container">
+   <div class="image is-3by1">
+      <%= user_cover(@user) %>
+  </div> 
+  <div class="tabs is-medium">
+    <ul>
+        <li class="is-active"><a>TWEETS</a></li>
+    </ul>
+</div>
+<div class="container">
 
-                        <div class="feeds">
+    <div class="feeds">
 
 
-                            <%= render 'shared/posts'%>
-                        </div>
+        <%= render 'shared/posts'%>
+    </div>
 
-                    </div>
+</div>
+</div>
+<div class="sidebar">
+    <div class="card">
+        <div class="card-content">
+            <div class="profile">
+                <div class="actions">
+                  <%= follow_button(@user)%>
+                  
+                  
+                  <div class="image is-rounded is-128x128">
+                    <%= user_photo(@user)%>
                 </div>
-                <div class="sidebar">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="profile">
-                                <div class="actions">
-                                  <%= follow_button(@user)%>
-                                
-                                  
-                                    <div class="image is-rounded is-128x128">
-                                        <%= render 'shared/photo',user: @user %>
-                                    </div>
-                                    <div class="more">
-                                        <a href="#">
-                                            <span class=""><i class="fa fa-list-ul"></i></span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="info">
-                                    <h4 class="name"><%= @user.full_name%></h4>
-                                    <div class="link">@<%= @user.username%></div>
-                                </div>
-                                <div class="stats">
-                                    <div>
-                                        <div class="nbr"><%= @user.posts.count%></div>
-                                        <div class="text">Tweets</div>
-                                    </div>
-                                    <div>
-                                        <div class="nbr"><%= @user.followings.count %></div>
-                                        <div class="text">Following</div>
-                                    </div>
-                                    <div>
-                                        <div class="nbr"><%= @user.followers.count %></div>
-                                        <div class="text">Followers</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card ">
-                        <div class="card-title">
-                            <div class="card-header-title">
-                                <span>Followed By</span>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <%= followers_list(@user)%>
-                        </div>
-                       
-                    </div>
-
-
+                <div class="more">
+                    <a href="#">
+                        <span class=""><i class="fa fa-list-ul"></i></span>
+                    </a>
                 </div>
+            </div>
+            <div class="info">
+                <h4 class="name"><%= @user.full_name%></h4>
+                <div class="link">@<%= @user.username%></div>
+            </div>
+            <div class="stats">
+                <div>
+                    <div class="nbr"><%= @user.posts.count%></div>
+                    <div class="text">Tweets</div>
+                </div>
+                <div>
+                    <div class="nbr"><%= @user.followings.count %></div>
+                    <div class="text">Following</div>
+                </div>
+                <div>
+                    <div class="nbr"><%= @user.followers.count %></div>
+                    <div class="text">Followers</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card ">
+    <div class="card-title">
+        <div class="card-header-title">
+            <span>Followed By</span>
+        </div>
+    </div>
+    <div class="card-content">
+        <%= followers_list(@user)%>
+    </div>
+    
+</div>
+
+
+</div>

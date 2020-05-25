@@ -1,9 +1,10 @@
 <li>
 
-    <figure class="image is-64x64">
+    <figure class="image is-64x64 is-rounded">
         <a href="<%= show_user_path(user.username)%>">
             
-            <%= render 'shared/photo',user: user %>
+            
+            <%= user_photo(user)%>
         </a>
     </figure>
     <div class="info">

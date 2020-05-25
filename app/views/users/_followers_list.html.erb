@@ -5,7 +5,7 @@
 
             <figure class="image is-64x64 is-rounded">
                 <a href="<%= show_user_path(follower.username)%>">
-                <%= render 'shared/photo',user: follower %>
+                <%= user_photo(follower)%>
                 </a>
             
             </figure>
