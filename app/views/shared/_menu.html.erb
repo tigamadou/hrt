@@ -2,8 +2,8 @@
             <div class="user">
 
                 <div class="details">
-                    <div class="image">
-                        <img src="https://placehold.it/200x200/fff/000" alt="">
+                    <div class="image is-64x64 is-rounded">
+                        <%= render 'shared/photo',user: current_user %>
                     </div>
                     <div class="name">
                         <span><%= current_user.full_name %></span>

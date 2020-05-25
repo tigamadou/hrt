@@ -2,7 +2,8 @@
 
     <figure class="image is-64x64">
         <a href="<%= show_user_path(user.username)%>">
-            <%= image_tag("#{user.photo}", :alt => user.full_name,:class=> "is-rounded" ) %>
+            
+            <%= render 'shared/photo',user: user %>
         </a>
     </figure>
     <div class="info">

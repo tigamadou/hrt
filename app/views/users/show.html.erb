@@ -1,7 +1,11 @@
 <div class="container-fluid page">
-  <figure class="image is-3by1">
-    <img src="https://placehold.it/720x240" />
-  </figure>
+     <div class="image is-3by1">
+      <% if @user.cover_image.attached?%>
+        <%= image_tag url_for(@user.cover_image) %>
+        <%else%>
+        <img src="https://placehold.it/720x240"" alt="">
+        <% end %>
+      </div> 
                     <div class="tabs is-medium">
                         <ul>
                             <li class="is-active"><a>TWEETS</a></li>
@@ -25,8 +29,8 @@
                                   <%= follow_button(@user)%>
                                 
                                   
-                                    <div class="image">
-                                        <img src="https://placehold.it/120x120/fff/000" alt="" class="is-rounded">
+                                    <div class="image is-rounded is-128x128">
+                                        <%= render 'shared/photo',user: @user %>
                                     </div>
                                     <div class="more">
                                         <a href="#">

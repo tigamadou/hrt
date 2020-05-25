@@ -3,16 +3,17 @@
     <li>
         <div class="gr-1 d-flex">
 
-            <figure class="image small">
-                <a href="#"></a>
-                <img src="https://placehold.it/50x50/000/fff" class="is-rounded" alt="">
+            <figure class="image is-64x64 is-rounded">
+                <a href="<%= show_user_path(follower.username)%>">
+                <%= render 'shared/photo',user: follower %>
                 </a>
+            
             </figure>
             <div class="info">
                 <h4 class="uname">
                     <a href="<%= show_user_path(follower.username)%>"><%= follower.full_name%></a>
                 </h4>
-                <div class="ulink"><a href="#">@<%= follower.username%></a></div>
+                <div class="ulink"><a href="<%= show_user_path(follower.username)%>">@<%= follower.username%></a></div>
             </div>
         </div>
         

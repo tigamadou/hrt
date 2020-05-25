@@ -31,7 +31,7 @@
        <div class="container ">
         <h1 class="title">Sign Up</h1>
         <div class="form-inputs">
-          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),:html => {multipart: :true}) do |f| %>
             
             <div class="has-text-centered">
               <%= image_tag('logo.png')%>
@@ -77,6 +77,7 @@
                           input_html: { autocomplete: "new-password", class: "input" }, wrapper: false, label_html: { class: "label"} %>
                 </div>
               </div>
+              
               <div class="field">
                 <div class="form-actions">
                   <%= f.button :submit, "Sign up", class: "button is-primary is-medium" %>

@@ -15,5 +15,14 @@ module Hrt
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.to_prepare do
+      Devise::SessionsController.layout "application"
+      Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "account" : "application" }
+      Devise::ConfirmationsController.layout "application"
+      Devise::UnlocksController.layout "application"            
+      Devise::PasswordsController.layout "application"        
+    end
+
   end
+  
 end

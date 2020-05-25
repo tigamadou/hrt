@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :has_picture, only: [:index]
   layout 'account'
   # GET /posts
   # GET /posts.json
@@ -73,5 +74,9 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:author_id, :text, :created_at)
+    end
+    
+    def has_picture
+      redirect_to edit_user_path(current_user.username) if current_user.photo.nil?
     end
 end

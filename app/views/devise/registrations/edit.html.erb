@@ -1,35 +1,108 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container-fluid page">
+    <div class="container">
+      <%= link_to "Back", :back,class: "button " %>
+      <br><br>
+       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+       <%= f.error_notification %>
+      <div class="columns">
+        
+        <div class="column">
+           <% if resource.photo.attached?%>
+                <div class="image" style="width: 80px">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+                  <%= image_tag url_for(resource.photo),class:"is-rounded" %>
+                </div>
+              <% else%>
+                <%= image_tag gravatar_image_url(current_user.email,size: 40),height: 20, width: 20, class: "is-rounded"%>
+              <% end %>
+              <%= f.input :photo, required: true, autofocus: true,input_html: { type: "file",class: "input" },label_html: {class: "label"},wrapper:false %>
+              <br>
+          <div class="card">
+            <div class="card-image">
+              <div class="image is-3by1">
+              <% if resource.cover_image.attached?%>
+                <%= image_tag url_for(resource.cover_image) %>
+                <%else%>
+                <img src="https://placehold.it/720x240"" alt="">
+                <% end %>
+              </div>  
+            </div>
+            
+            <div class="card-content">
+                <%= f.input :cover_image, required: true, autofocus: true,input_html: { type: "file",class: "input" },label_html: {class: "label"},wrapper:false %>
+            </div>
+          </div>          
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-header-title">
+                Edit Details
+          
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="field">
+                <div class="control">
+                  <%= f.input :email, required: true, autofocus: true,input_html: { class: "input",readonly: true },label_html: {class: "label"},wrapper:false %>
+                </div>
+              </div>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+              <% end %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+              <div class="field">
+                <div class="control">
+                  <%= f.input :password,
+                          hint: "leave it blank if you don't want to change it",
+                          required: false,
+                          input_html: { autocomplete: "new-password",class: "input" },label_html: {class: "label"},wrapper:false  %>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <%= f.input :password_confirmation,
+                          required: false,
+                          input_html: { autocomplete: "new-password" ,class: "input" },label_html: {class: "label"},wrapper:false %>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <%= f.input :current_password,
+                          hint: "we need your current password to confirm your changes",
+                          required: true,
+                          input_html: { autocomplete: "current-password" ,class: "input" },label_html: {class: "label"},wrapper:false %>
+                </div>
+              </div>
+              
+              <div class="field">
+                <div class="control">
+                   <%= f.button :submit, "Update",class: "button is-primary" %>
+                </div>
+               
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      
 
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-  </div>
+     
+        
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
+     
+          
+          
+        
 
-<h3>Cancel my account</h3>
+        
+      <% end %>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <h3>Cancel my account</h3>
 
-<%= link_to "Back", :back %>
+      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+      
+    </div>
+</div>
