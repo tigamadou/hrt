@@ -1,7 +1,7 @@
 <div class="card tweet_feed">
                 <div class="card-header">
                     <div class="card-header-title">
-                        <%= @posts.length%> NEW TWEET<%= is_plural(@posts.length)%>
+                        <%= @posts.length%> NEW TWEET<%= plural?(@posts.length)%>
                     </div>
                 </div>
                 <div class="card-content ">
@@ -29,22 +29,10 @@
                                      <%= post.text %>
                                   </p>
                                 </div>
-                                <nav class="level is-mobile">
-                                  <div class="level-left">
-                                    <a class="level-item"  href="<%= post_path(post) %>">
-                                      <span class="icon "><i class="fa fa-comment"></i></span>
-                                      <span>0</span>
-                                    </a>
-                                    
-                                    <a class="level-item">
-                                      <span class="icon "><i class="fa fa-heart"></i></span>
-                                      <span>0</span>
-                                    </a>
-                                  </div>
-                                </nav>
+                                <% comment_like(post) %>
                               </div>
                               <div class="media-right">
-                                <%= actions_menu(post) %>
+                                <% actions_menu(post) %>
                               </div>
                             </article>
                         </li>

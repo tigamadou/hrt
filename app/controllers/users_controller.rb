@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  layout 'account', only: [:index,:show,:edit]
+  before_action :set_user, only: %i[show edit update destroy]
+  layout 'account', only: %i[index show edit]
   # GET /users
   # GET /users.json
   def index
@@ -20,8 +20,7 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /users
   # POST /users.json
@@ -44,7 +43,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-         redirect_to @user, notice: 'User was successfully updated.' 
+        redirect_to @user, notice: 'User was successfully updated.'
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -64,13 +63,14 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find_by(username: params[:username])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:username, :full_name, :photo, :cover_image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find_by(username: params[:username])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def user_params
+    params.require(:user).permit(:username, :full_name, :photo, :cover_image)
+  end
 end
