@@ -51,7 +51,7 @@
                                 </div>
                                 <nav class="level is-mobile">
                                   <div class="level-left">
-                                    <a class="level-item">
+                                    <a class="level-item"  href="<%= post_path(post) %>">
                                       <span class="icon "><i class="fa fa-comment"></i></span>
                                       <span>0</span>
                                     </a>
@@ -75,7 +75,7 @@
                                       </div>
                                       <div class="dropdown-menu" id="dropdown-menu6" role="menu">
                                         <div class="dropdown-content">
-                                          <a class="dropdown-item" href="<%= new_post_path %>">
+                                          <a class="dropdown-item" href="<%= post_path(post) %>">
                                             <span>View</span>
                                           </a>
                                           <a class="dropdown-item" href="<%=  edit_post_path(post) %>">
