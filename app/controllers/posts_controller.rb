@@ -26,8 +26,9 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
-
+    
+    @post = current_user.posts.new(post_params)
+    byebug
     respond_to do |format|
       if @post.save
         format.html { redirect_to root_path, notice: 'Post was successfully created.' }
