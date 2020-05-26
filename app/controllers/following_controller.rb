@@ -1,5 +1,6 @@
 class FollowingController < ApplicationController
   before_action :set_followed
+
   def create
     current_user.follow(@user) unless current_user.following?(@user)
     redirect_to show_user_path(@user.username), notice: 'User Followed.'

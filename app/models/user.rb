@@ -3,8 +3,9 @@ class User < ApplicationRecord
   has_one_attached :cover_image
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
   validates :username, presence: true, uniqueness: true
-  validates :full_name, presence: true
+  validates :full_name, :email, :password, presence: true
 
   has_many :posts, foreign_key: 'author_id'
   has_many :received_follows, foreign_key: :followed_id, class_name: 'Following'

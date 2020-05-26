@@ -10,4 +10,8 @@ module PostsHelper
   def comment_like(post)
     render 'posts/comment_like', post: post
   end
+
+  def new_users
+    @new_users = User.all
+  end
 end

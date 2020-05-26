@@ -14,9 +14,9 @@
                 <div class="card-content">
                    <%= form_for(:post) do |f|%>
                       <div class = "field">
-                          <%= f.label "Tweet SOmething", class: 'label'  %>
+                          <%= f.label "Tweet Something", class: 'label'  %>
                           <div class="control">
-                            <%= f.text_field :text, class: 'input' %>
+                            <%= f.text_field :text, class: 'input',autofocus:true %>
                           </div>
                         </div>
                     <% end %>                    
@@ -24,7 +24,7 @@
 
             </div>
 
-            <%= render 'shared/posts'%>
+            <%= render 'posts/posts'%>
         </div>
 
     </div>

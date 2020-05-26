@@ -1,0 +1,19 @@
+<div class="card tweet_feed">
+                <div class="card-header">
+                    <div class="card-header-title">
+                        <%= @posts.length%> NEW TWEET<%= plural?(@posts.length)%>
+                    </div>
+                </div>
+                <div class="card-content ">
+                    <ul class="tweet_list">
+                        <% @posts.each do |post| %>
+                        
+                        <li>
+                          
+                            <%= render 'posts/single',post: post%>
+                        </li>
+                        <% end %>
+                  
+                    </ul>
+                </div>
+            </div>

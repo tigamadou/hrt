@@ -44,6 +44,16 @@
             <div class="card-content">
               <div class="field">
                 <div class="control">
+                  <%= f.input :username, required: true, autofocus: true,input_html: { class: "input",readonly: true },label_html: {class: "label"},wrapper:false %>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <%= f.input :full_name, required: true, autofocus: true,input_html: { class: "input",readonly: true },label_html: {class: "label"},wrapper:false %>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
                   <%= f.input :email, required: true, autofocus: true,input_html: { class: "input",readonly: true },label_html: {class: "label"},wrapper:false %>
                 </div>
               </div>
@@ -77,6 +87,8 @@
                 </div>
                
               </div>
+
+              
             </div>
             </div>
           </div>

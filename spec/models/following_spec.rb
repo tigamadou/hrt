@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Following, type: :model do
-  let (:user1) { User.new(username: 'JohnDoe',full_name: 'John Doe',email: 'johndoe@domain.com',password: 'password') }
-  let (:user12) { User.new(username: 'JahnDoe',full_name: 'Jahn Doe',email: 'jahndoe@domain.com',password: 'password') }
-  let (:follow) { Following.new(follower_id: user1.id,followed_id: user12.id) }
+  let(:user1) { User.new(username: 'JohnDoe', full_name: 'John Doe', email: 'johndoe@domain.com', password: 'password') }
+  let(:user12) { User.new(username: 'JahnDoe', full_name: 'Jahn Doe', email: 'jahndoe@domain.com', password: 'password') }
+  let(:follow) { Following.new(follower_id: user1.id, followed_id: user12.id) }
 
   describe 'Validations' do
     context 'Has follower_id and followed_id' do
@@ -25,11 +25,10 @@ RSpec.describe Following, type: :model do
         expect(follow.save).to eq(false)
       end
     end
-    
   end
 
   describe 'Associations' do
-    it { should belong_to(:follower)}
-    it { should belong_to(:followed)}
+    it { should belong_to(:follower) }
+    it { should belong_to(:followed) }
   end
 end
