@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates :full_name, :email, :password, presence: true
 
   has_many :posts, foreign_key: 'author_id'
+  has_many :comments, foreign_key: 'author_id'
+
   has_many :received_follows, foreign_key: :followed_id, class_name: 'Following'
   has_many :followers, through: :received_follows, source: :follower
 

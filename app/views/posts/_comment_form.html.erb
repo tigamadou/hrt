@@ -1,0 +1,24 @@
+<%= form_for(post.comments.new, url: post_comments_path(post)) do |form| %>
+       
+        <article class="media has-background-light comment_form">
+            <figure class="media-left">
+                <p class="image is-64x64 is-rounded">
+                    <%= user_photo(current_user )%>
+                </p>
+            </figure>
+            <div class="media-content">
+                
+                <div class="field has-addons">
+                    <p class="control is-expanded">
+                        
+                        <%= form.text_field :text, class: 'input',rows:2, placeholder: 'Add new Comment',required:true %>
+                    </p>
+                    <p class="control">
+                         <button class="button is-info ">Submit</button>
+                    </p>
+                </div>
+               
+            </div>
+            </article>
+        
+      <% end %>

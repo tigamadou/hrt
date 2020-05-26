@@ -13,7 +13,8 @@
             <div class="card tweet_feed">
 
                 <div class="card-content">
-                  <%= render 'posts/single',post: @post%>
+                    <%= render 'posts/single_comments',post: @post%>
+                   <%= render 'posts/comment_form',post: @post %>
                 </div>
 
             </div>
