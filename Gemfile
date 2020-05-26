@@ -37,6 +37,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -56,7 +57,7 @@ group :test do
   gem 'capybara'
   gem 'rspec'
   gem 'selenium-webdriver'
-  gem 'shoulda-matchers'
+  
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
