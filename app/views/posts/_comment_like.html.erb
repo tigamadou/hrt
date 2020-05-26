@@ -4,9 +4,7 @@
         <span class="icon "><i class="fa fa-comment"></i></span>
         <span><%= post.comments.count||=0 %></span>
     </a>                                    
-    <a class="level-item has-text-grey">
-        <span class="icon "><i class="fa fa-heart"></i></span>
-        <span>0</span>
-    </a>
+    
+    <%= like_or_dislike_btn(post)%>
     </div>
 </nav>

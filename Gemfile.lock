@@ -110,6 +110,8 @@ GEM
     ffi (1.12.2-java)
     ffi (1.12.2-x64-mingw32)
     ffi (1.12.2-x86-mingw32)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -329,6 +331,7 @@ DEPENDENCIES
   database_cleaner
   devise (~> 4.7, >= 4.7.1)
   factory_bot_rails
+  font-awesome-rails
   gravatar_image_tag
   guard (~> 2.16, >= 2.16.2)
   guard-livereload (~> 2.5, >= 2.5.2)

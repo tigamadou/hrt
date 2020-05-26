@@ -6,5 +6,5 @@ class Post < ApplicationRecord
   validates :author_id, numericality: { only_integer: true }
 
   has_many :comments, dependent: :destroy
-  
+  has_many :likes, dependent: :destroy
 end

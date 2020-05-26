@@ -1,0 +1,4 @@
+<a href="<%= post_like_path(id: like.id,post_id: like.post_id)%>" class="level-item has-text-danger"  data-method="delete" rel="nofollow">
+    <span class="icon "><i class="fa fa-heart"></i></span>
+    <span><%= count||0 %></span>
+</a>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_26_094914) do
+ActiveRecord::Schema.define(version: 2020_05_26_114553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,11 @@ ActiveRecord::Schema.define(version: 2020_05_26_094914) do
     t.index ["follower_id"], name: "index_followings_on_follower_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.integer "author_id"
     t.text "text"
@@ -80,4 +85,6 @@ ActiveRecord::Schema.define(version: 2020_05_26_094914) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "users"
 end
