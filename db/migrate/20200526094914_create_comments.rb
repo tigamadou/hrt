@@ -1,4 +1,4 @@
-class CreateComment < ActiveRecord::Migration[6.0]
+class CreateComments < ActiveRecord::Migration[6.0]
   def change
     create_table :comments do |t|
       t.integer :author_id
@@ -6,6 +6,6 @@ class CreateComment < ActiveRecord::Migration[6.0]
       t.text :text
 
     end
-    add_index :comments, :post_id    
+    add_index :comments, :post_id   
   end
 end
