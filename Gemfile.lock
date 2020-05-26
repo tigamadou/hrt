@@ -101,6 +101,11 @@ GEM
     eventmachine (1.2.7-java)
     eventmachine (1.2.7-x64-mingw32)
     eventmachine (1.2.7-x86-mingw32)
+    factory_bot (5.2.0)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.2.0)
+      factory_bot (~> 5.2.0)
+      railties (>= 4.2.0)
     ffi (1.12.2)
     ffi (1.12.2-java)
     ffi (1.12.2-x64-mingw32)
@@ -323,6 +328,7 @@ DEPENDENCIES
   capybara
   database_cleaner
   devise (~> 4.7, >= 4.7.1)
+  factory_bot_rails
   gravatar_image_tag
   guard (~> 2.16, >= 2.16.2)
   guard-livereload (~> 2.5, >= 2.5.2)
