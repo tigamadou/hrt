@@ -14,7 +14,7 @@ You can find the
 
 [See Demo](https://thawing-wave-61294.herokuapp.com/) 
 
-> This demo don't persist your uploads. So all the images uploaded will be lost feews hours later.
+> This demo doesn't persist uploads. That means that all the images uploaded will be erased few hours later.
 
 ## Features
 * Devise Authentication and Registration 
@@ -22,6 +22,14 @@ You can find the
 * User Following
 * Profile page
 * Cover Image and profile image upload
+
+## Tools Used
+
+* [Rails 6](https://rubyonrails.org/)
+* Erb template engine
+* [Sass](https://sass-lang.com/)
+* [Postgres](https://www.postgresql.org/)
+* [Rubucop](https://github.com/rubocop-hq/rubocop)
 
 ## Getting Started
 
@@ -85,9 +93,8 @@ Open `http://localhost:3000/` in your browser.
 - Linkedin: [Amadou IBRAHIM](https://www.linkedin.com/in/amadou-ibrahim-75769167/)
 
 ## Work Done
-Whatever the theme you may choose, you should follow a user journey to build the following **MVP version** of the app:
 
-1. The user logs in to the app, only by typing the username (a proper authenticated login is **not** a requirement).
+1. The user logs in to the app,
 2. The user is presented with the homepage (see the *Homepage* screenshot above) that includes:
     1. Left-side menu (includes only links to pages that are implemented).
     2. *Tweets* tab in the centre (skip *Photos* and *Videos* for this MVP).
