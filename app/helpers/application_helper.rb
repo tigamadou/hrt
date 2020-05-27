@@ -10,10 +10,11 @@ module ApplicationHelper
 
   def user_cover(user)
     if user.cover_image.attached?
-      render 'shared/cover', user: user
+      # render 'shared/cover', user: user
+      url_for(user.cover_image)
     else
-
-      render 'shared/default_cover', user: user
+      url_for('default_cover.jpg')
+      # render 'shared/default_cover', user: user
     end
   end
 
