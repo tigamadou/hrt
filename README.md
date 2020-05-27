@@ -1,7 +1,9 @@
-# Ashu
+# Human Rights Talks
+
 ![screenshot](./docs/screenshot.png)
 
-Capstone projects are solo projects at the end of the each of the [Microverse](https://microverse.org) Main Technical Curriculum sections.  This Ruby on Rails capstone is based on a redesign of Twitter. And I've called it HRT for "Human Rights Talks".
+Capstone projects are solo projects at the end of the each of the [Microverse](https://microverse.org) Main Technical Curriculum sections.  It's a real-world-like project, built with business specifications. 
+This Ruby on Rails capstone is based on a redesign of Twitter. And I've called it HRT for "Human Rights Talks".
 
 You can find the 
 
@@ -92,7 +94,7 @@ Open `http://localhost:3000/` in your browser.
 - Twitter: [@tigamadou](https://twitter.com/tigamadou)
 - Linkedin: [Amadou IBRAHIM](https://www.linkedin.com/in/amadou-ibrahim-75769167/)
 
-## Work Done
+## Project Specifications
 
 1. The user logs in to the app,
 2. The user is presented with the homepage (see the *Homepage* screenshot above) that includes:
@@ -134,7 +136,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
+* This project is based on [Twitter - Redesign of UI details](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-detailss) by [Gregoire Vella](https://www.behance.net/gregoirevella)
 
 ## 📝 License
 
