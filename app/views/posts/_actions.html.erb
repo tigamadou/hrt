@@ -1,0 +1,22 @@
+<div class="dropdown is-pulled-right is-small is-rounded is-hoverable">
+                                      <div class="dropdown-trigger">
+                                        <button class="button is-small is-white" aria-haspopup="true" aria-controls="dropdown-menu6">
+                                          
+                                          <span class="icon is-small">
+                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                          </span>
+                                        </button>
+                                      </div>
+                                      <div class="dropdown-menu" id="dropdown-menu6" role="menu">
+                                        <div class="dropdown-content">
+                                        
+                                          <a class="dropdown-item" href="<%=  edit_post_path(post) %>">
+                                            <span>Edit</span>
+                                          </a>
+                                          <a class="dropdown-item" href="<%= post_path(post) %>" data-confirm="Are you sure?" data-method="delete" rel="nofollow" >
+                                            <span>Delete</span>
+                                          </a>
+                                          
+                                        </div>
+                                      </div>
+                                    </div>

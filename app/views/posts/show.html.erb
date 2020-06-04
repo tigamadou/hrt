@@ -1,0 +1,33 @@
+
+<div class="container-fluid page">
+    <div class="tabs is-medium">
+        <ul>
+            <li class="is-active"><a>TWEETS</a></li>            
+        </ul>
+    </div>
+    <div class="container">
+        <%= link_to 'Back', posts_path,class: "button" %>
+        <br/><br/>
+        <div class="feeds ">
+          
+            <div class="card tweet_feed">
+
+                <div class="card-content">
+                    <%= render 'posts/single_comments',post: @post%>
+                   <%= render 'posts/comment_form',post: @post %>
+                </div>
+
+            </div>
+
+            
+        </div>
+
+    </div>
+
+                        
+</div>
+<div class="sidebar">
+    <%=render 'sidebar/who_to_follow'%>
+
+    
+</div>

@@ -1,0 +1,39 @@
+
+<div class="container-fluid page">
+    <div class="tabs is-medium">
+        <ul>
+            <li class="is-active"><a>TWEETS</a></li>            
+        </ul>
+    </div>
+    <div class="container">
+
+        <div class="feeds">
+
+            <div class="card new_post">
+
+                <div class="card-content">
+                   <%= form_for(:post) do |f|%>
+                      <div class = "field">
+                          <%= f.label "Tweet Something", class: 'label'  %>
+                          <div class="control">
+                            <%= f.text_field :text, class: 'input',autofocus:true %>
+                          </div>
+                        </div>
+                    <% end %>                    
+                </div>
+
+            </div>
+
+            <%= render 'posts/posts'%>
+        </div>
+
+    </div>
+
+                        
+</div>
+<div class="sidebar">
+    <%=render 'sidebar/who_to_follow'%>
+
+    
+</div>
+

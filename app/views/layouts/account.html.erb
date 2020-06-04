@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hrt</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'%>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    
+  </head>
+
+  <body>
+        
+        <div class="wrapper">
+            <%= render 'shared/menu' %>
+                <main class="page-container">
+                    <%= render 'shared/navbar' %>
+                    <%= render 'shared/flash' %>
+                    <div class="page-content">
+                    
+                            <%= yield %>
+                        
+                    </div>
+                </main>
+            </div>
+        
+  </body>
+</html>

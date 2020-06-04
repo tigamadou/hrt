@@ -1,0 +1,18 @@
+<li>
+
+    <figure class="image is-64x64 is-rounded">
+        <a href="<%= show_user_path(user.username)%>">
+            
+            
+            <%= user_photo(user)%>
+        </a>
+    </figure>
+    <div class="info">
+        <h4 class="uname">
+        <a href="<%= show_user_path(user.username)%>"><%= user.full_name %></a></h4>
+        <% if !user.followers.first.nil?%>
+            <div class="details">Followed by<a href="#"> <% user.followers.first.username%></a></div>
+        <% end %>
+    </div>
+    <%= follow_button(user) %>
+</li>

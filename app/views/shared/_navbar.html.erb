@@ -1,0 +1,30 @@
+<nav class="navbar is-info" role="navigation" aria-label="main navigation">
+                        <div class="navbar-brand">
+                            <a class="navbar-item" href="/">
+                                
+                                <%= image_tag("logo.png", :alt => "logo") %>
+                            </a>
+
+                            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                                data-target="navbarBasicExample">
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
+                            </a>
+                        </div>
+
+                        <div id="navbarBasicExample" class="navbar-menu">
+
+
+                            <div class="navbar-end">
+                          
+                                <a href="<%= edit_user_registration_path(current_user)%>" class=" navbar-item ">
+                                    <span class="icon"><i class="fa fa-cog"></i></span>
+                                </a>
+                                <a href="<%= destroy_user_session_path %>"  data-method="delete" rel="nofollow"  class=" navbar-item ">
+                                    <span class="icon"><i class="fa fa-sign-out"></i></span> <span>Sing Out</span>
+                                </a>
+
+                            </div>
+                        </div>
+                    </nav>

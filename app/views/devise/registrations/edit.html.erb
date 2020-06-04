@@ -1,0 +1,115 @@
+<div class="container-fluid page">
+    <div class="container">
+      <%= link_to "Back", :back,class: "button " %>
+      <br><br>
+       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+       <%= f.error_notification %>
+      <div class="columns">
+        
+        <div class="column">
+            <div class="columns">
+              <div class="column is-narrow">
+                <div class="image is-rounded is-128x128">
+                  <%= user_photo(resource) %>
+                </div>
+
+              </div>
+              <div class="column">
+             
+
+                  <%= f.input :photo, required: true, autofocus: true,input_html: { type: "file",class: "input" },label_html: {class: "label"},wrapper:false %>
+              </div>
+            </div>
+              <br>
+          <div class="card">
+            <div class="card-image">
+              <div class="image is-3by1"  style="background-image:url('<%= user_cover(resource) %>');background-size:cover;background-repeat:no-repeat;">
+                
+              </div>  
+            </div>
+            
+            <div class="card-content">
+                <%= f.input :cover_image, required: true, autofocus: true,input_html: { type: "file",class: "input" },label_html: {class: "label"},wrapper:false %>
+            </div>
+          </div>          
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-header-title">
+                Edit Details
+          
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="field">
+                <div class="control">
+                  <%= f.input :username, required: true, autofocus: true,input_html: { class: "input",readonly: true },label_html: {class: "label"},wrapper:false %>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <%= f.input :full_name, required: true, autofocus: true,input_html: { class: "input",readonly: true },label_html: {class: "label"},wrapper:false %>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <%= f.input :email, required: true, autofocus: true,input_html: { class: "input",readonly: true },label_html: {class: "label"},wrapper:false %>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <%= f.input :password,
+                          hint: "leave it blank if you don't want to change it",
+                          required: false,
+                          input_html: { autocomplete: "new-password",class: "input" },label_html: {class: "label"},wrapper:false  %>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <%= f.input :password_confirmation,
+                          required: false,
+                          input_html: { autocomplete: "new-password" ,class: "input" },label_html: {class: "label"},wrapper:false %>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <%= f.input :current_password,
+                          hint: "we need your current password to confirm your changes",
+                          required: true,
+                          input_html: { autocomplete: "current-password" ,class: "input" },label_html: {class: "label"},wrapper:false %>
+                </div>
+              </div>
+              
+              <div class="field">
+                <div class="control">
+                   <%= f.button :submit, "Update",class: "button is-primary" %>
+                </div>
+               
+              </div>
+
+              
+            </div>
+            </div>
+          </div>
+        </div>
+      
+
+     
+        
+
+     
+          
+          
+        
+
+        
+      <% end %>
+
+      <h3>Cancel my account</h3>
+
+      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+      
+    </div>
+</div>

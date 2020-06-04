@@ -1,0 +1,354 @@
+@import 'variables'
+
+html
+    height: 100vh
+body
+    height: 100vh
+    *
+        box-sizing: border-box
+        
+.wrapper
+    height: 100vh    
+    display: flex
+    justify-content: space-between
+    position: relative
+    .side-panel
+        width: 100%
+        max-width: 300px
+        background: $primary
+        height: 100vh
+        position: sticky
+        top: 0px
+        .user
+            .details
+                display: flex
+                justify-content: flex-start
+                align-items: center
+                padding: 16px
+                color: #fff
+                border-bottom: 1px solid darken($primary,10)
+                .image
+                    max-width: 60px
+                    border-radius: 50px
+                    overflow: hidden
+                .name
+                    padding: 0px 15px
+                    color: darken(#bfcbd7,20)
+            .stats
+                display: flex
+                justify-content: center
+                align-items: center
+                >div
+                    text-align: center
+                    width: 50%
+                    height: 80px
+                    padding: 16px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    .nb
+                        color: #bfcbd7
+                    .text
+                        color: darken(#bfcbd7,20)
+                >div:first-child
+                    border-right: 1px solid darken($primary,20)
+                border-bottom: 1px solid darken($primary,10)
+        .s_menu
+            li
+                a
+                    display: block
+                    padding: 15px 15px
+                    color: darken(#bfcbd7,20)
+                    position: relative
+                    transition: all 0.25s ease
+                    &::after
+                        content: ''
+                        position: absolute
+                        bottom: -1px
+                        left: 0px
+                        height: 2px
+                        background: lighten($info,25 )
+                        width: 0%
+                        transition: all 0.25s ease-in-out
+
+
+                    .icon
+                        margin-right: 15px
+                    &:hover
+                        background: $info
+                        color: #fff
+                        &::after
+                            width: 100%
+                    &:active
+                        background: lighten($info,25 )
+                        color: $primary
+                &.is-active
+                    a
+                        background: $info
+                        color: #fff
+    .page-container
+        flex-grow: 1
+        display: flex
+        flex-direction: column
+        height: 100vh
+        overflow: hidden
+        position: relative
+        backface-visibility: hidden
+        will-change: overflow
+        background: $light
+        .navbar
+            height: 80px
+            padding: 0px 32px
+            .navbar-end
+                width: 20%
+                
+        .page-content
+            
+            display: flex
+            justify-content: flex-start
+            align-items: top
+            
+            height: auto
+            overflow: auto
+            -webkit-overflow-scrolling: touch
+            -ms-overflow-style: none    
+            scrollbar-width: none
+            &::-webkit-scrollbar 
+                display: none
+
+            .page
+                flex-grow: 4
+                .tabs
+                    border-bottom-color:  darken($light,20 )
+                    height: 74px
+                    position: sticky
+                    top: 0px
+                    z-index: 2
+                    background: $light
+                    li
+                        a
+                            padding: 0px 15px
+                            line-height: 74px
+                            color: darken($light,30 )
+                            font-weight: 600
+                            font-size: 0.85rem
+                            border: none
+                            position: relative
+                            text-transform: uppercase
+                            &::after
+                                content: ''
+                                position: absolute
+                                bottom: 0px
+                                left: 0px
+                                right: 0px
+                                height: 2px
+                                background: $info                                
+                                margin: 0px 50% 0px 50%
+                                transition: all 0.25s ease-in-out
+                            &:hover
+                                border-bottom: none
+                                &::after
+                                    margin: 0%
+                        &.is-active
+                            a
+                                border-bottom: none
+                                color: darken($light,50 )
+                                &::after
+                                    margin: 0%
+                        &:first-child
+                            padding: 0px 20px
+                .container
+                    max-width: 100%
+                    padding: 15px 30px                    
+                    position: relative              
+                               
+                    
+                    .new_post
+                        margin-bottom: 2rem
+                        box-shadow: none
+                        label
+                            color: darken($light,20 )
+                    .tweet_feed
+                        padding: 16px
+                        box-shadow: none
+                        .card-header
+                            box-shadow: none
+                            padding: 0px
+                            
+                            .card-header-title
+                                padding-bottom: 15px
+                                font-size: 15px
+                                border-bottom: 1px solid darken($light, 10)
+                                color: $info
+                        .card-content
+                            padding: 0px
+                            padding-top: 16px
+                        .tweet_list
+                        .tweet
+                            margin-bottom: 1.5rem
+                            .content
+                                font-size: 15px
+                                color: darken($light, 40)
+                                margin-bottom: 5px
+                                .author
+                                    color: #000
+                                .uname
+                                    color: darken($light, 40)
+                                    &:hover
+                                        text-decoration: underline
+            .sidebar
+                flex-grow: 1
+                position: sticky
+                top: 0px
+                border-left: 1px solid darken($light,10 )
+                width: 100%
+                max-width: 350px
+                overflow: auto
+                padding: 0rem 32px
+                scrollbar-width: none
+                &::-webkit-scrollbar 
+                    display: none
+                .card
+                    background: $light
+                    // border-bottom: 1px solid  darken($light,20 )
+                    box-shadow: none
+                    .card-header-title
+                        padding: 0px
+                        
+                        height: 74px
+                        border-bottom: 1px solid  darken($light,20 )
+                        display: flex
+                        justify-content: space-between
+                        color: darken($light,30 )
+                        font-weight: 600
+                        font-size: 0.85rem
+                        text-transform: uppercase
+                    .card-content
+                        padding: 1.5rem 0px
+                        .ulist
+                            li
+                                display: flex
+                                justify-content: flex-start
+                                align-items: center
+                                margin-bottom: 1.5rem
+                                .image
+                                    margin-right: 15px
+                                    &.small
+                                        width: 50px
+                                a
+                                    color: #000
+                                    font-weight: 600
+                                .info
+                                    
+                                    .uname
+                                        
+                                        font-size: 1rem
+                                        a
+                                            color: darken($light, 50)
+                                    .details
+                                        color: darken($light, 25)
+                                        font-size: .75rem
+                                        a
+                                            color: $info
+                                    .ulink
+                                        font-size: .75rem
+                                        a
+                                            color: darken($light, 25)
+                                .more
+                                    border: 1px solid darken($light,20 )
+                                    border-radius: 50px
+                                    font-size: 0.8rem
+                                    a
+                                        color: darken($light,20 )
+                        .profile
+                            .actions
+                                display: flex
+                                justify-content: center
+                                align-items: center
+                                margin-bottom: 16px
+
+                                .more
+                                    border: 1px solid darken($light,20 )
+                                    border-radius: 50px
+                                    font-size: 1.2rem
+                                    height: 40px
+                                    width: 40px
+                                    display: flex
+                                    justify-content: center
+                                    align-items: center
+                                    a
+                                        
+                                        color: darken($light,20 )
+                                .image
+                                    width: 128px
+                                    margin: 0px 0.5rem
+                            .info
+                                text-align: center
+                                
+                                .name
+                                    font-size: 1.2rem
+                                    font-weight: 900
+                                .link
+                                    color: darken($light,20 )
+                                    font-weight: 600
+                                margin-bottom: 16px
+                            .stats
+                                display: flex
+                                justify-content: space-between
+                                align-items: center
+                                text-align: center
+                                margin: 0px -32px
+                                &>div
+                                    flex-grow: 1
+                                    padding: 32px 15px
+                                    border: 1px solid darken($light,20 )
+                                    &:first-child
+                                        border-left: none
+                                        border-right: none
+                                    &:last-child
+                                        border-left: none
+                                        border-right: none
+                                    .nbr
+                                        font-size: 1.2rem
+                                        font-weight: 900
+                                    .text
+                                        font-size: 1rem
+                                        color: darken($light,20 )
+
+                            
+                    .card-footer
+                        padding: 0px
+                        display: block
+                        font-size: 0.85rem
+                        border: none
+                        .card-footer-item
+                            padding: 0px
+                            display: inline-block 
+                            margin-right: 15px   
+                            border: none 
+                            color: $info          
+
+.form-inputs
+    max-width: 400px
+    margin: auto
+   
+
+.sesbakg
+    background: image-url("2979210-min.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+.flash-container
+    position: fixed
+    top: 0px
+    right: 0px
+    max-width: 300px
+    z-index: 10000
+.error_notification, .error, .label abbr
+    color: red
+
+.image.is-rounded
+    overflow: hidden
+    border-radius: 50%
+.comment_form
+    
+    padding: 15px

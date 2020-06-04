@@ -1,0 +1,50 @@
+<aside class="side-panel has-background-primary">
+            <div class="user">
+
+                <div class="details">
+                    <div class="image is-64x64 is-rounded">
+                        
+                        <%= user_photo(current_user)%>
+                    </div>
+                    <div class="name">
+                        <span><%= current_user.full_name %></span>
+                    </div>
+                </div>
+                <div class="stats">
+                    <div class="following">
+                        <div>
+                            <p class="nb"><%= current_user.followings.count %></p>
+                            <p class="text">Following</p>
+                        </div>
+                    </div>
+                    <div class="following">
+                        <div>
+                            <p class="nb"><%= current_user.followers.count %></p>
+                            <p class="text">Followers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="s_menu">
+                <li >
+                    <a href="<%= posts_path%>">
+                        <span class="icon">
+                            <i class="fa fa-home"></i>
+                        </span>
+                        <span>HOME</span>
+                    </a>
+                </li>               
+                
+                <li>
+                    <a href="<%= show_user_path(current_user.username)%>">
+                        <span class="icon">
+                            <i class="fa fa-user"></i>
+                        </span>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                
+              
+            
+            </ul>
+        </aside>

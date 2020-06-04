@@ -1,0 +1,26 @@
+<ul class="ulist">
+    <% @user.followers.limit(10).each do |follower|%>
+    <li>
+        <div class="gr-1 d-flex">
+
+            <figure class="image is-64x64 is-rounded">
+                <a href="<%= show_user_path(follower.username)%>">
+                <%= user_photo(follower)%>
+                </a>
+            
+            </figure>
+            <div class="info">
+                <h4 class="uname">
+                    <a href="<%= show_user_path(follower.username)%>"><%= follower.full_name%></a>
+                </h4>
+                <div class="ulink"><a href="<%= show_user_path(follower.username)%>">@<%= follower.username%></a></div>
+            </div>
+        </div>
+        
+        <% follow_button(follower) %>
+    </li>
+    <% end%>
+    
+    
+
+</ul>

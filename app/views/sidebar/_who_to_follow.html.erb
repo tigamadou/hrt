@@ -1,0 +1,20 @@
+<div class="card ">
+        <div class="card-title">
+            <div class="card-header-title">
+                <span>Who to Follow</span>
+                <span class="icon"><i class="fas fa-sync"></i></span>
+            </div>
+        </div>
+        <div class="card-content">
+            <ul class="ulist">
+                <% new_users.includes([:photo_attachment]).each do |user|%>
+                    <%= to_follow(user) %>               
+                <% end %>
+                
+            </ul>
+        </div>
+        <div class="card-footer">
+            <a class="card-footer-item">Popular Account</a>
+            <a class="card-footer-item">Find Friends</a>
+        </div>
+    </div>

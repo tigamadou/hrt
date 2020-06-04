@@ -1,0 +1,31 @@
+<div class="tweet">
+                    <article class="media">
+                      <figure class="media-left">
+                        <p class="image is-64x64 is-rounded">
+                          <%= user_photo(post.author )%>
+                        </p>
+                      </figure>
+                      <div class="media-content">
+                        <div class="content">
+                          <p>
+                            <a href="<%= show_user_path(post.author.username)%>" class="author">
+                            <strong><%= post.author.full_name%></strong>
+                            </a>
+                            <a href="<%= show_user_path(post.author.username)%>" class="uname">
+                                <span>@<%= post.author.username%></span>
+                            </a>
+                              <span class="date"><%= time_ago_in_words(post.created_at)%></span>
+                            <br>
+                              <%= post.text %>
+                          </p>
+                          <%= comment_like(post) %>
+                         
+                        </div>
+                        <%= render 'posts/comments',post: post %>
+                        
+                      </div>
+                      <div class="media-right">
+                        <%= actions_menu(post) %>
+                      </div>
+                    </article>            
+                </div>

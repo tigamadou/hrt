@@ -1,0 +1,30 @@
+<% if post.comments.count.positive?%>
+    <% post.comments.includes([:author]).most_recent.each do |comment| %>
+        <article class="media">
+                      <figure class="media-left">
+                        <p class="image is-48x48 is-rounded">
+                          <%= user_photo(comment.author )%>
+                        </p>
+                      </figure>
+                      <div class="media-content">
+                        <div class="content">
+                          <p>
+                            <a href="<%= show_user_path(comment.author.username)%>" class="author">
+                            <strong><%= comment.author.full_name%></strong>
+                            </a>
+                            <a href="<%= show_user_path(comment.author.username)%>" class="uname">
+                                <span>@<%= comment.author.username%></span>
+                            </a>
+                              <span class="date"><%= time_ago_in_words(comment.created_at)%></span>
+                            <br>
+                              <%= comment.text %>
+                          </p>
+                         
+                         
+                        </div>
+                      </div>
+                 
+                    </article>  
+      
+    <% end %>
+<% end %>
