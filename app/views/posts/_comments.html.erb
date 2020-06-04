@@ -1,5 +1,5 @@
 <% if post.comments.count.positive?%>
-    <% post.comments.most_recent.each do |comment| %>
+    <% post.comments.includes([:author]).most_recent.each do |comment| %>
         <article class="media">
                       <figure class="media-left">
                         <p class="image is-48x48 is-rounded">

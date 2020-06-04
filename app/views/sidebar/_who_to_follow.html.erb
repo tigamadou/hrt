@@ -7,7 +7,7 @@
         </div>
         <div class="card-content">
             <ul class="ulist">
-                <% new_users.each do |user|%>
+                <% new_users.includes([:photo_attachment]).each do |user|%>
                     <%= to_follow(user) %>               
                 <% end %>
                 

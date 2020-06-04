@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   layout 'account'
 
   def index
-    @posts = Post.all.ordered_by_most_recent
+    @posts = Post.all.ordered_by_most_recent.includes([:author])
     @new_users = User.all
   end
 

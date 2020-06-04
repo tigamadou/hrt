@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   layout 'account', only: %i[index show edit]
 
   def show
-    @posts = @user.posts.ordered_by_most_recent
+    @posts = @user.posts.ordered_by_most_recent.includes([:author])
   end
 
   private
