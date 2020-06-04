@@ -7,6 +7,8 @@ RSpec.describe User, type: :model do
                         email: 'johndoe@gmail.com',
                         password: 'password')
   end
+  let(:user) { User.create(username: 'tigana',full_name:'Jean Tigana', email: 'tigana@ymail.com', password: 'password') }
+
   describe 'Validations' do
     it 'is valid with valid ' do
       subject.save
@@ -32,6 +34,26 @@ RSpec.describe User, type: :model do
       subject.password = nil
       expect(subject).to_not be_valid
     end
+  end
+
+  describe 'Methods' do
+    it 'is valid with follow working' do
+      subject.save
+      expect(subject.follow(user)).to be_valid
+    end
+
+    it 'is valid with following working' do
+      subject.save
+      subject.follow(user)
+      expect(subject.following?(user)).to be_truthy
+    end
+
+    it 'is valid with follower not working' do
+      subject.save
+      subject.follow(user)
+      expect(subject.follower?(user)).to be_falsy
+    end
+
   end
 
   describe 'Associations' do
