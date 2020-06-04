@@ -6,10 +6,8 @@ Rails.application.routes.draw do
   end
   devise_for :users
 
-   get 'users/:username', to: 'users#show' , as: 'show_user'
-
-  post 'following/create', to: 'following#create', as: 'create_following'
-  
+  get 'users/:username', to: 'users#show' , as: 'show_user'
+  post 'following/create', to: 'following#create', as: 'create_following'  
   root 'posts#index'
 
 end
