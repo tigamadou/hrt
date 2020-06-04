@@ -70,6 +70,9 @@ GEM
     bootsnap (1.4.6-java)
       msgpack (~> 1.0)
     builder (3.2.4)
+    bullet (6.1.0)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     bulma-rails (0.8.2)
       sassc (~> 2.0)
     byebug (11.1.2)
@@ -295,6 +298,7 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2020.1)
       tzinfo (>= 1.0.0)
+    uniform_notifier (1.13.0)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (4.0.1)
@@ -325,6 +329,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors (~> 2.7, >= 2.7.1)
   bootsnap (>= 1.4.2)
+  bullet
   bulma-rails (~> 0.8.2)
   byebug
   capybara
