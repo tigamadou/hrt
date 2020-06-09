@@ -23,6 +23,10 @@ This Ruby on Rails capstone is based on a redesign of Twitter. And I've called i
 * Profile page
 * Cover Image and profile image upload
 
+## Future features
+- Image Sharing 
+- Video Sharing
+
 ## Tools Used
 
 * [Rails 6](https://rubyonrails.org/)
